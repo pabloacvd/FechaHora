@@ -46,8 +46,8 @@ public class Main {
         Pedirle al usuario, día y mes de su cumpleaños
         e informarle qué día del año cumple.
          */
-        /*
         Scanner sc = new Scanner(System.in);
+        /*
         System.out.print("Ingrese el día de su cumple: ");
         int elDia = sc.nextInt();
         System.out.print("Ingrese el mes de su cumple: ");
@@ -68,5 +68,36 @@ public class Main {
             System.out.println("Faltan "+diasQueFaltan);
             System.out.println("Todavía faltan "+diasParaNavidad+" días para navidad! :-(");
         }
+
+        System.out.print("Ingrese el día de vencimiento: ");
+        int diaVencimiento = sc.nextInt();
+        System.out.print("Ingrese el mes de vencimiento: ");
+        int mesVencimiento = sc.nextInt();
+        System.out.print("Ingrese el año de vencimiento: ");
+        int anioVencimiento = sc.nextInt();
+        LocalDate fechaVencimiento = LocalDate.of(anioVencimiento, mesVencimiento, diaVencimiento);
+        LocalDate fechaHoy = LocalDate.now();
+        int elDiaDeVencimiento = fechaVencimiento.getDayOfYear();
+        int elDiaDeHoy = fechaHoy.getDayOfYear();
+
+        if(elDiaDeVencimiento < elDiaDeHoy){
+            // esta vencido
+            System.out.println("TIRE ESO!");
+        }else if(elDiaDeVencimiento >= elDiaDeHoy){
+            if(elDiaDeVencimiento >= elDiaDeHoy+30){
+                // faltan 30 o más días
+                System.out.println("Debe guardar el producto");
+            }else{
+                // faltan menos de 30 días
+                System.out.println("Se sugiere usar el producto");
+            }
+        }
     }
+    /*
+    Se pide al usuario que ingrese la fecha de vencimiento de un producto.
+    Si el producto está vencido, se le sugiere que lo tire.
+    Si faltan 30 días o más para su vencimiento, se le sugiere que lo guarde.
+    Si faltan menos de 30 días para su vencimiento, se le pide que lo use pronto
+     porque va a tener que tirarlo.
+     */
 }
