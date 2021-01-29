@@ -60,7 +60,7 @@ public class Main {
         LocalDateTime laNavidad = LocalDateTime.of(2021,12,24,23,59);
         LocalDateTime unDia = LocalDateTime.now().plusDays(1); //mañana
 
-        if(unDia.isAfter(laNavidad)){
+        if(unDia.isAfter(laNavidad)){ // pregunto si mañana es después de navidad
             System.out.println("Ya pasó navidad :-(");
         }else{
             int diasParaNavidad = laNavidad.getDayOfYear()-unDia.getDayOfYear();
